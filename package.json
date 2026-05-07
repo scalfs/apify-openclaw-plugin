@@ -3,6 +3,17 @@
   "version": "0.2.0",
   "description": "Web scraping and AI-powered data extraction via Apify for OpenClaw — market research, competitor intelligence, trend analysis, lead generation, e-commerce, social media analytics, and more.",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
   "license": "MIT",
   "author": "Apify Technologies s.r.o.",
   "repository": {
@@ -30,6 +41,7 @@
     "facebook"
   ],
   "files": [
+    "dist/",
     "src/",
     "openclaw.plugin.json",
     "README.md",
@@ -60,7 +72,7 @@
       "pluginSdkVersion": "2026.4.15"
     },
     "extensions": [
-      "./src/index.ts"
+      "./dist/index.js"
     ]
   }
 }
